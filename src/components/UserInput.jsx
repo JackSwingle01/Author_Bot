@@ -3,20 +3,41 @@ import { useEffect, useState } from 'react';
 import "./userInput.css"
 
 const UserInput = (props) => {
-  const { setPrompt, setMaxWords, setTemperature, submit } = props
+  const { setPrompt, setMaxWords, setTemperature, setGradeLevel, submit } = props
   // console.log(prompt)
 
   return (
     <div id="whole">
 
       <div id="inputWrapper">
-        <h1>Ask Something:</h1>
+        <h1>Write My Essay:</h1>
         <div id="twoinp">
           <p>Options:</p>
           <input onChange={(e) => setMaxWords(e.target.value)} type="text" placeholder="Max Words (aprox.)" />
           <input onChange={(e) => setTemperature(e.target.value)} type="text" placeholder="Creativity (0-2)" />
+          <select onChange={(e) => setGradeLevel(e.target.value)} placeholder="Grade Level">
+            <option value="1st grade">1st grade</option>
+            <option value="2nd grade">2nd grade</option>
+            <option value="3rd grade">3rd grade</option>
+            <option value="4th grade">4th grade</option>
+            <option value="5th grade">5th grade</option>
+            <option value="6th grade">6th grade</option>
+            <option value="7th grade">7th grade</option>
+            <option value="8th grade">8th grade</option>
+            <option value="9th grade">9th grade</option>
+            <option value="10th grade">10th grade</option>
+            <option value="11th grade">11th grade</option>
+            <option value="12th grade" selected>12th grade</option>
+            <option value="College Freshman">College Freshman</option>
+            <option value="College Sophomore">College Sophomore</option>
+            <option value="College Junior">College Junior</option>
+            <option value="College Senior">College Senior</option>
+            <option value="Graduate Student">Graduate Student</option>
+            <option value="Post-Graduate">Post-Graduate</option>
+            <option value="Philosopher">Philosopher</option>
+          </select>
         </div>
-        <textarea id="input" onChange={(e) => setPrompt(e.target.value)} type="text" placeholder="Prompt" />
+        <textarea id="input" onChange={(e) => setPrompt(e.target.value)} type="text" placeholder="Topic" />
         <button id="submit" onClick={() => submit()}>Submit</button >
       </div>
     </div>

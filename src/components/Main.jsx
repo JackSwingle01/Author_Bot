@@ -12,6 +12,7 @@ const Main = () => {
   const [maxWords, setMaxWords] = useState(5);
   const [temperature, setTemperature] = useState(.5);
   const [botTalk, setBotTalk] = useState('');
+  const [gradeLevel, setGradeLevel] = useState("12th grade");
 
   let responseText = '';
 
@@ -31,21 +32,23 @@ const Main = () => {
     return response;
   }
 
-  // async function responseToString(res) {
-  //   res.then((response) => {
-  //     return response.data.choices[0].text
-  //   });
-  // }
-
   async function submit() {
 
-    let maxTokens = maxWords * (4/3);
+    let maxTokens = maxWords * (4 / 3);
 
-    await getCompletion(prompt, maxTokens, temperature).then((res) => {
+    await getCompletion(await engineerPrompt(), maxTokens, temperature).then((res) => {
       setBotTalk(res.data.choices[0].text)
-      console.log(botTalk);
+      // console.log(botTalk);
     });
 
+  }
+
+  async function engineerPrompt() {
+
+    let engineeredPrompt = `The following is an essay between ${maxWords > 50 ? maxWords - 100 : 50} and ${maxWords} words.
+    It is written at a ${gradeLevel} writing level. 
+        It is based on the prompt: ${prompt}: \n\n`;
+    return engineeredPrompt;
   }
 
   return (
@@ -53,9 +56,9 @@ const Main = () => {
       <UserInput setPrompt={setPrompt}
         setMaxWords={setMaxWords}
         setTemperature={setTemperature}
+        setGradeLevel={setGradeLevel}
         submit={submit} />
       {botTalk ? <h3 id="bottalk">{botTalk}</h3> : <div id="default">The bot is deep in thought... hm....</div>}
-
     </div >
   );
 };
