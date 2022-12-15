@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { UserInput } from './';
 import "./main.css"
-import { API_SECRET_KEY, API_SECRET_KEY } from "../../API_KEY";
+import { API_SECRET_KEY } from "../API_KEY";
 
 const Main = () => {
 
