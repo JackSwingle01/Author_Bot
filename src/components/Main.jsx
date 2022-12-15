@@ -9,7 +9,7 @@ const Main = () => {
   // const authorizationHeader = { header: "Authorization: Bearer " + API_KEY };
 
   const [prompt, setPrompt] = useState('');
-  const [maxTokens, setMaxTokens] = useState(5);
+  const [maxWords, setMaxWords] = useState(5);
   const [temperature, setTemperature] = useState(.5);
   const [botTalk, setBotTalk] = useState('');
 
@@ -39,6 +39,8 @@ const Main = () => {
 
   async function submit() {
 
+    let maxTokens = maxWords * (4/3);
+
     await getCompletion(prompt, maxTokens, temperature).then((res) => {
       setBotTalk(res.data.choices[0].text)
       console.log(botTalk);
@@ -49,7 +51,7 @@ const Main = () => {
   return (
     <div id="main">
       <UserInput setPrompt={setPrompt}
-        setMaxTokens={setMaxTokens}
+        setMaxWords={setMaxWords}
         setTemperature={setTemperature}
         submit={submit} />
       {botTalk ? <h3 id="bottalk">{botTalk}</h3> : <div id="default">The bot is deep in thought... hm....</div>}
