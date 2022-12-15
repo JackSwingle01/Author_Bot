@@ -40,7 +40,7 @@ const Main = () => {
   async function submit() {
 
     await getCompletion(prompt, maxTokens, temperature).then((res) => {
-     setBotTalk(res.data.choices[0].text)
+      setBotTalk(res.data.choices[0].text)
       console.log(botTalk);
     });
 
@@ -48,13 +48,12 @@ const Main = () => {
 
   return (
     <div id="main">
-      <UserInput  setPrompt={setPrompt}
+      <UserInput setPrompt={setPrompt}
         setMaxTokens={setMaxTokens}
         setTemperature={setTemperature}
-        submit = {submit} />
-      
-      {botTalk ? <h3 id="bottalk">{botTalk}</h3> : <div id="default">the bot is deep in thought... hm....</div>}
-      
+        submit={submit} />
+      {botTalk ? <h3 id="bottalk">{botTalk}</h3> : <div id="default">The bot is deep in thought... hm....</div>}
+
     </div >
   );
 };

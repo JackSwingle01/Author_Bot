@@ -1,29 +1,44 @@
-#whole  {
-    display:flex;
+#whole {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#inputWrapper   {
-   display: flex;
-   flex-direction: column;
-   border: 6px outset rgb(189, 182, 255);
-    background-color: rgba(220, 250, 238, 0.467);
-   padding: 3em 4em;
-   height: 80%;
-   width: 80%;
-   box-shadow: 3px 3px 3px 3px #4444;
-   justify-content: space-between;
+#inputWrapper {
+    display: flex;
+    flex-direction: column;
+    /* border: 6px outset rgb(189, 182, 255); */
+    /* background-color: rgba(220, 250, 238, 0.467); */
+    border: 6px outset var(--secondary-background);
+    background-color: var(--secondary-background);
+    padding: 3em;
+    height: 70%;
+    width: 50%;
+    box-shadow: 3px 3px 3px 3px #4444;
+    justify-content: space-between;
 }
 
-#input  {
+h1 {
+    align-self: center;
+    font-size: xx-large;
+    color: var(--primary-text);
+    font-family: monospace;
+}
+
+#input {
     height: 6em;
+    width: 80%;
+    align-self: center;
 }
 
 #submit {
-    width: 60px;   
+    width: 20%;
+    align-self: center;
 }
 
 #twoinp {
-    width: 160px;
+    width: 60%;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
 }
