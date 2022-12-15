@@ -1,0 +1,29 @@
+#whole  {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputWrapper   {
+   display: flex;
+   flex-direction: column;
+   border: 6px outset rgb(189, 182, 255);
+    background-color: rgba(220, 250, 238, 0.467);
+   padding: 3em 4em;
+   height: 80%;
+   width: 80%;
+   box-shadow: 3px 3px 3px 3px #4444;
+   justify-content: space-between;
+}
+
+#input  {
+    height: 6em;
+}
+
+#submit {
+    width: 60px;   
+}
+
+#twoinp {
+    width: 160px;
+}

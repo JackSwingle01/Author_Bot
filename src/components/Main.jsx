@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from './';
-
+import { UserInput } from './';
+import "./main.css"
 
 const Main = () => {
 
@@ -47,11 +47,13 @@ const Main = () => {
 
   return (
     <div id="main">
-      <Navbar  setPrompt={setPrompt}
+      <UserInput  setPrompt={setPrompt}
         setMaxTokens={setMaxTokens}
-        setTemperature={setTemperature} />
-      <button onClick={() => submit()}> Submit</button >
-      <h3>{botTalk}</h3>
+        setTemperature={setTemperature}
+        submit = {submit} />
+      
+      {botTalk ? <h3 id="bottalk">{botTalk}</h3> : <div id="default">the bot is deep in thought... hm....</div>}
+      
     </div >
   );
 };
