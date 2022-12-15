@@ -11,7 +11,7 @@ const UserInput = (props) => {
 
       <div id="inputWrapper">
         <h1>Write My Essay:</h1>
-        <div id="twoinp">
+        <div id="inputs">
           <p>Options:</p>
           <input onChange={(e) => setMaxWords(e.target.value)} type="text" placeholder="Max Words (aprox.)" />
           <input onChange={(e) => setTemperature(e.target.value)} type="text" placeholder="Creativity (0-2)" />

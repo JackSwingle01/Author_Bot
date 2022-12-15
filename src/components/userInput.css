@@ -16,6 +16,7 @@
     width: 50%;
     box-shadow: 3px 3px 3px 3px #4444;
     justify-content: space-between;
+    /* color: var(--secondary-background); */
 }
 
 h1 {
@@ -29,6 +30,11 @@ h1 {
     height: 6em;
     width: 80%;
     align-self: center;
+    
+   
+}
+input{
+    color: var(--secondary-background);
 }
 
 #submit {
@@ -36,9 +42,16 @@ h1 {
     align-self: center;
 }
 
-#twoinp {
-    width: 60%;
+#inputs {
+    /* width: 30%; */
     align-self: center;
     display: flex;
     justify-content: space-between;
+}
+
+select{
+    margin: 10px;
+    color: var(--secondary-background);
+    /* background-color: var(--primary-text); */
+
 }

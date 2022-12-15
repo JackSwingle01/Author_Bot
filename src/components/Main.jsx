@@ -47,7 +47,7 @@ const Main = () => {
 
     let engineeredPrompt = `The following is an essay between ${maxWords > 50 ? maxWords - 100 : 50} and ${maxWords} words.
     It is written at a ${gradeLevel} writing level. 
-        It is based on the prompt: ${prompt}: \n\n`;
+        It is based on the toptic: "${prompt}": \n\n`;
     return engineeredPrompt;
   }
 
@@ -59,6 +59,7 @@ const Main = () => {
         setGradeLevel={setGradeLevel}
         submit={submit} />
       {botTalk ? <h3 id="bottalk">{botTalk}</h3> : <div id="default">The bot is deep in thought... hm....</div>}
+      <p>DISCLAMER: We make no gaurantees about the factual accuracy of the essays. We reccomend fact checking any claims and running the essay through a plagirism checker before submission.</p>
     </div >
   );
 };
