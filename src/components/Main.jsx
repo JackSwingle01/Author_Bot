@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { UserInput } from './';
 import "./main.css"
+import { API_SECRET_KEY, API_SECRET_KEY } from "../../API_KEY";
 
 const Main = () => {
 
-  const API_SECRET_KEY = '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';
-  const authorizationHeader = { header: "Authorization: Bearer " + API_SECRET_KEY };
+  const API_KEY = API_SECRET_KEY;
+  // const authorizationHeader = { header: "Authorization: Bearer " + API_KEY };
 
   const [prompt, setPrompt] = useState('');
   const [maxTokens, setMaxTokens] = useState(5);
@@ -18,7 +19,7 @@ const Main = () => {
 
     const { Configuration, OpenAIApi } = require("openai");
     const configuration = new Configuration({
-      apiKey: API_SECRET_KEY,
+      apiKey: API_KEY,
     });
     const openai = new OpenAIApi(configuration);
     const response = await openai.createCompletion({
