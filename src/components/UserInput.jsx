@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import "./userInput.css"
 
 const UserInput = (props) => {
-  const { setPrompt, setMaxWords, setTemperature, setGradeLevel, submit } = props
+  const { setPrompt, setMaxWords, setTemperature, setGradeLevel, setFormalityLevel, submit } = props
   // console.log(prompt)
 
   return (
@@ -15,7 +15,8 @@ const UserInput = (props) => {
           <p>Options:</p>
           <input onChange={(e) => setMaxWords(e.target.value)} type="text" placeholder="Max Words (aprox.)" />
           <input onChange={(e) => setTemperature(e.target.value)} type="text" placeholder="Creativity (0-2)" />
-          <select onChange={(e) => setGradeLevel(e.target.value)} placeholder="Grade Level">
+          {/* <label htmlFor="gradeLevel"></label> */}
+          <select onChange={(e) => setGradeLevel(e.target.value)} id="gradeLevel" placeholder="Grade Level">
             <option value="1st grade">1st grade</option>
             <option value="2nd grade">2nd grade</option>
             <option value="3rd grade">3rd grade</option>
@@ -34,13 +35,23 @@ const UserInput = (props) => {
             <option value="College Senior">College Senior</option>
             <option value="Graduate Student">Graduate Student</option>
             <option value="Post-Graduate">Post-Graduate</option>
-            <option value="Philosopher">Philosopher</option>
+            <option value="professional">Professional</option>
+            <option value="A grandiloquent 18th century German Philosopher">Philosopher</option>
+          </select>
+          <select onChange={(e) => setFormalityLevel(e.target.value)} id="Formality" placeholder="Formality Level">
+            <option value="very formal">Very Formal</option>
+            <option value="formal">Formal</option>
+            <option value="" selected>Neutral</option>
+            <option value="informal">Informal</option>
+            <option value="very informal">Very Informal</option>
           </select>
         </div>
+
+
         <textarea id="input" onChange={(e) => setPrompt(e.target.value)} type="text" placeholder="Topic" />
         <button id="submit" onClick={() => submit()}>Submit</button >
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -1,7 +1,7 @@
 #whole {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #inputWrapper {
@@ -54,4 +54,14 @@ select{
     color: var(--secondary-background);
     /* background-color: var(--primary-text); */
 
+}
+
+#formality-radio-selectors{
+    display: flex;
+    flex-direction: column;
+    /* padding: 0px; */
+}
+#formality-radio-selectors input {
+    margin:0px;
+    padding: 0px;
 }
