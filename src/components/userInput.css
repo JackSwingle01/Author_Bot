@@ -26,7 +26,7 @@ h1 {
     font-family: monospace;
 }
 
-#input {
+#topic-input {
     height: 6em;
     width: 80%;
     align-self: center;
@@ -42,7 +42,7 @@ input{
     align-self: center;
 }
 
-#inputs {
+.inputs {
     /* width: 30%; */
     align-self: center;
     display: flex;
@@ -52,7 +52,8 @@ input{
 select{
     margin: 10px;
     color: var(--secondary-background);
-    /* background-color: var(--primary-text); */
+    height: auto;
+  
 
 }
 
@@ -65,3 +66,10 @@ select{
     margin:0px;
     padding: 0px;
 }
+
+/* #optional-checkboxes{
+    padding: 1%;
+    display: block;
+    position: relative;
+    font-size: smaller;
+} */
